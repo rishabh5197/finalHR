@@ -1,0 +1,31 @@
+#logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+#link {
+  text-decoration: none;
+  /* color:burlywood; */
+}
+
+#actions {
+  margin: 35px;
+  width: auto;
+  height: 250px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  /* background-color:red; */
+}
+
+#actions:hover {
+  margin: 35px;
+  width: auto;
+  height: 250px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border: 5px dashed rgba(0, 0, 0, 0.24);
+  /* background-color:red; */
+}

@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- website logo -->
+    <link
+      rel="icon"
+      href="{% static 'hr/images/logo.jpg' %}"
+      type="image/x-icon"
+    />
+    <title>Dudhat Industries</title>
+    <link rel="stylesheet" href="{% static 'hr/css/viewprofile.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div align="center" style="margin-top: 10%">
+      <div class="input-group mb-3" style="width: 50%; height: 30x">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Employee Id"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary" type="button">Search</button>
+        </div>
+      </div>
+    </div>
+    <!-- Search of employee ends here -->
+    <br />
+
+    <!-- display of the profile begins here.... -->
+    <div class="container">
+      <div class="main-body">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <!-- set user image -->
+                  <img
+                    src="{% static 'hr/images/maleicon.png'%}"
+                    alt="Admin"
+                    class="rounded-circle p-1 bg-primary"
+                    width="150"
+                  />
+                  <div class="mt-3">
+                    <h4>ABC</h4>
+                    <!-- <h4>{{user_name}}</h4> -->
+                    <p class="text-secondary mb-1"><b>Designation</b></p>
+                    <p class="text-secondary mb-1">{{Designation}}</p>
+                    <p class="text-muted font-size-sm"><b>Employee Id</b></p>
+                    <p class="text-muted font-size-sm">{{emp_id}}</p>
+                    <!-- <button class="btn btn-primary">Follow</button> -->
+                    <!-- <button class="btn btn-outline-primary">Message</button> -->
+                  </div>
+                </div>
+                <hr class="my-4" />
+                <ul class="list-group list-group-flush">
+                  <!-- email -->
+                  <!-- <li
+                    class="
+                      list-group-item
+                      d-flex
+                      justify-content-between
+                      align-items-center
+                      flex-wrap
+                    "
+                  >
+                    <h6 class="mb-0">
+                      <img
+                        src="{% static 'hr/images/4x/mail.png' %}"
+                        style="height: 20px; width: 25px"
+                      />&nbsp;E-Mail
+                    </h6>
+                    <span class="text-secondary">{{email}}</span>
+                  </li> -->
+                  <!--  For mobile 1-->
+                  <!-- <li
+                    class="
+                      list-group-item
+                      d-flex
+                      justify-content-between
+                      align-items-center
+                      flex-wrap
+                    "
+                  >
+                    <h6 class="mb-0">
+                      <img
+                        src="{% static 'hr/images/4x/Primary phone.png' %}"
+                        style="height: 25px; width: 15px"
+                      />&nbsp;&nbsp; Mobile Number
+                    </h6>
+                    <span class="text-secondary">{{mobile1}}</span>
+                  </li> -->
+                  <!-- For mobile 2 -->
+                  <!-- <li
+                    class="
+                      list-group-item
+                      d-flex
+                      justify-content-between
+                      align-items-center
+                      flex-wrap
+                    "
+                  >  -->
+                  <!-- <h6 class="mb-0">
+                      <img
+                        src="{% static 'hr/images/4x/alternate mobile.png' %}"
+                        style="height: 25px; width: 15px"
+                      />&nbsp;&nbsp;&nbsp;Alt. Mobile No
+                    </h6>
+                    <span class="text-secondary">{{mobile2}}</span>
+                  </li> -->
+                  <!-- <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+									<h6 class="mb-0"><img src="{% static 'hr/images/4x/date.png' %}" style="height:25px;width:30px;">&nbsp;Birthdate</h6>
+									<span class="text-secondary">{{Bdate}}</span>
+								</li> -->
+                  <!-- <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+									<h6 class="mb-0"><img src="{% static 'hr/images/4x/Education.png' %}" style="height:25px;width:30px;">&nbsp;Education</h6>
+									<span class="text-secondary">{{education}}</span>
+								</li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-body">
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Mobile Number</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <!-- <input type="text" class="form-control" value="john@example.com"> -->
+                    <label> {{mobile1}}</label>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email Address</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <!-- <input type="text" class="form-control" value="john@example.com"> -->
+                    <label> {{email}}</label>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Birthdate</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <!-- <input type="text" class="form-control" value="john@example.com"> -->
+                    <label> {{bdate}}</label>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Employee Id</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <!-- <input type="text" class="form-control" value="john@example.com"> -->
+                    <label> {{emp_id}}</label>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Education</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <!-- <input type="text" class="form-control" value="john@example.com"> -->
+                    <label> {{education}}</label>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Date of Joining</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <!-- <input type="text" class="form-control" value="John Doe"> -->
+                    <label> {{dateofjoining}}</label>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Salary</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <!-- <input type="text" class="form-control" value="john@example.com"> -->
+                    <label> {{salary}}</label>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Job Description</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <!-- <input type="text" class="form-control" value="(239) 816-9029"> -->
+                    <label>{{job_description}}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row">
+						<div class="col-sm-12">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="d-flex align-items-center mb-3">Project Status</h5>
+									<p>Web Design</p>
+									<div class="progress mb-3" style="height: 5px">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									<p>Website Markup</p>
+									<div class="progress mb-3" style="height: 5px">
+										<div class="progress-bar bg-danger" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									<p>One Page</p>
+									<div class="progress mb-3" style="height: 5px">
+										<div class="progress-bar bg-success" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									<p>Mobile Template</p>
+									<div class="progress mb-3" style="height: 5px">
+										<div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									<p>Backend API</p>
+									<div class="progress" style="height: 5px">
+										<div class="progress-bar bg-info" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <!-- <h6 class="mb-0">Date of Joining</h6> -->
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <!-- <input type="text" class="form-control" value="John Doe"> -->
+                <!-- <a href="/hr/"
+                  ><button class="btn btn-outline-primary">
+                    <span
+                      ><img
+                        style="height: 20px; width: 20px"
+                        src="{% static 'hr/images/goback.png'%}"
+                    /></span>
+                    Back
+                  </button>
+                </a> -->
+                <!-- <button class="btn btn-outline-primary"></button>  -->
+              </div>
+              <!-- Buttons of back and delete are here -->
+              <div class="row"></div>
+              <div align="center">
+                <button type="button" class="btn btn-outline-warning">
+                  <span>
+                    <img
+                      style="height: 30px; width: 20px"
+                      src="{% static 'hr/images/deleteicon.png'%}"
+                    /> </span
+                  >Delete</button
+                >&nbsp;
+                <a href="/hr/"
+                  ><button class="btn btn-success">
+                    <span
+                      ><img
+                        style="height: 20px; width: 20px"
+                        src="{% static 'hr/images/goback.png'%}"
+                    /></span>
+                    Back
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="text-center text-white"
+      style="
+        width: 82%;
+        background-color: gray;
+        margin-left: 9%;
+        margin-right: 10%;
+        margin-top: 5%;
+      "
+    >
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © {{year}} Copyright:
+        <a class="text-white" href="http://www.dudhatindustries.com/"
+          >dudhatindustries.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,501 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{% static 'hr/images/logo.jpg' %}"
+      type="image/x-icon"
+    />
+    <title>Add New Employee</title>
+    <link rel="stylesheet" href="{% static 'hr/css/ask_actions.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'hr\css\adduserform.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-dark"
+      style="
+        align-items: center;
+        background-color: #73a9c2;
+        width: 100%;
+        border: 2px solid rgba(0, 0, 0, 0.24);
+        justify-content: center;
+      "
+    >
+      <a
+        class="navbar-brand"
+        style="font-weight: bold; font-size: x-large; color: rgb(255, 195, 117)"
+        href="/hr/"
+      >
+        <img
+          src="{% static 'hr/images/addprofile.png' %}"
+          width="40"
+          height="40"
+          class="d-inline-block align-top"
+          alt="Add User image"
+        />
+        Add User
+      </a>
+    </nav>
+
+    <!-- This is for industry banner -->
+    <!-- <div align="center" style="padding-top: 25px">
+      <img
+        src="{% static 'hr/images/industry banner.jpg' %}"
+        class="img-fluid"
+        alt="Responsive image"
+        style="
+          width: 50%;
+          height: 250px;
+          padding-top: 0%;
+          filter: blur(0px);
+          padding-left: 0px;
+          padding-right: 0px;
+          border-radius: 25px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        "
+      />
+    </div> -->
+
+    <!-- Form to take inputs -->
+
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div
+          class="
+            col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5
+            text-center
+            p-0
+            mt-3
+            mb-2
+          "
+        >
+          <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+            <h2 id="heading">Add new user</h2>
+            <p>Fill all details to move ahead</p>
+            <form id="msform" method="post">
+              {{% csrf_token %}}
+              <!-- progressbar -->
+              <ul id="progressbar">
+                <li class="active" id="personal"><strong>Personal</strong></li>
+                <li id="account"><strong>Q/A</strong></li>
+                <li id="payment"><strong>Files</strong></li>
+                <li id="confirm"><strong>Finish</strong></li>
+              </ul>
+              <div class="progress">
+                <div
+                  class="
+                    progress-bar progress-bar-striped progress-bar-animated
+                  "
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <br />
+              <!-- fieldsets -->
+              <fieldset>
+                <div class="form-card">
+                  <div class="row">
+                    <div class="col-7">
+                      <h2 class="fs-title">Personal Information</h2>
+                    </div>
+                    <div class="col-5">
+                      <h2 class="steps">Step 1 - 4</h2>
+                    </div>
+                  </div>
+                  <i
+                    ><img
+                      src="{% static 'hr/images/nameicon.png'%}"
+                      alt="nameicon"
+                      style="margin-left: 10px; height: 25px; width: 25px"
+                  /></i>
+                  <label class="fieldlabels">Name: *</label>
+
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Full name of person"
+                    required
+                  />
+
+                  <img
+                    src="{% static 'hr/images/emailicon.png'%}"
+                    alt="emailicon"
+                    style="margin-left: 10px; height: 25px; width: 25px"
+                  />
+                  <label class="fieldlabels">Email Address: </label>
+                  <input type="email" name="email" placeholder="Email ID" />
+
+                  <img
+                    src="{% static 'hr/images/mobileicon.png'%}"
+                    alt="mobileicon"
+                    style="margin-left: 10px; height: 25px; width: 15px"
+                  />
+                  <label class="fieldlabels">Contact Number: * </label>
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Contact No."
+                    required
+                  />
+
+                  <img
+                    src="{% static 'hr/images/mobileicon.png'%}"
+                    alt="mobileicon"
+                    style="margin-left: 10px; height: 25px; width: 15px"
+                  />
+                  <label class="fieldlabels">Alternate Contact No : </label>
+                  <input
+                    type="text"
+                    name="alternatephone"
+                    placeholder="Alternate Contact No."
+                  />
+
+                  <img
+                    src="{% static 'hr/images/locationicon.png'%}"
+                    alt="locationicon"
+                    style="margin-left: 10px; height: 25px; width: 15px"
+                  />
+                  <label class="fieldlabels">Address : </label>
+                  <textarea
+                    name="address"
+                    id=""
+                    cols="10"
+                    rows="7"
+                    placeholder="Address of the person"
+                  ></textarea>
+
+                  <img
+                    src="{% static 'hr/images/birthdateicon.png'%}"
+                    alt="birthdateicon"
+                    style="margin-left: 10px; height: 25px; width: 25px"
+                  />
+                  <label class="fieldlabels">Birth Date : </label>
+                  <input
+                    type="date"
+                    name="birth_date"
+                    id="input"
+                    class="form-control"
+                    value=""
+                    required="required"
+                    title=""
+                  />
+
+                  <img
+                    src="{% static 'hr/images/educationicon.png' %}"
+                    alt="educationicon"
+                    style="margin-left: 10px; height: 25px; width: 35px"
+                  />
+                  <label class="fieldlabels">Education Qualification : </label>
+                  <input
+                    type="text"
+                    name="education_qualification"
+                    placeholder="Highest Education"
+                  />
+
+                  <img
+                    src="{% static 'hr/images/gendericon.png' %}"
+                    alt="nameicon"
+                    style="
+                      margin-left: 10px;
+                      height: 22px;
+                      width: 35px;
+                      opacity: 0.7;
+                    "
+                  />
+                  <label class="fieldlabels">Gender : </label>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="radio_gender"
+                      value="male"
+                      style="margin-left: 25%; width: 20px"
+                      id="male"
+                    />
+                    <img
+                      src="{% static 'hr/images/maleicon.png' %}"
+                      alt="nameicon"
+                      style="height: 75px; width: 60px"
+                    />
+
+                    <input
+                      type="radio"
+                      style="margin-left: 15%; width: 20px"
+                      value="female"
+                      name="radio_gender"
+                      id="female"
+                    />
+                    <img
+                      src="{% static 'hr/images/female.png' %}"
+                      alt="nameicon"
+                      style="height: 75px; width: 55px"
+                    />
+                  </div>
+                </div>
+                <input
+                  type="button"
+                  name="next"
+                  class="next action-button"
+                  value="Next"
+                />
+              </fieldset>
+              <fieldset>
+                <div class="form-card">
+                  <div class="row">
+                    <div class="col-7">
+                      <h2 class="fs-title" style="padding: 2px">
+                        Last Worked Details & Expectations
+                      </h2>
+                    </div>
+                    <div class="col-5">
+                      <h2 class="steps">Step 2 - 4</h2>
+                    </div>
+                  </div>
+                  <img
+                    src="{% static 'hr/images/4x/emp_id.png' %}"
+                    alt="jobtitalicon"
+                    style="height: 25px; width: 30px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Employee_id *</label>
+                  <input
+                    type="text"
+                    name="emp_id"
+                    placeholder="Employee ID (Make Sure this doesn't get over-ride)"
+                  />
+
+                  <img
+                    src="{% static 'hr/images/jobtitalicon.png' %}"
+                    alt="jobtitalicon"
+                    style="height: 25px; width: 20px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Job Title: *</label>
+                  <input type="text" name="job_title" placeholder="Job Title" />
+
+                  <img
+                    src="{% static 'hr/images/birthdateicon.png'%}"
+                    alt="birthdateicon"
+                    style="margin-left: 10px; height: 25px; width: 25px"
+                  />
+                  <label class="fieldlabels">Date of Joining : </label>
+                  <input
+                    type="date"
+                    name="date_of_joining"
+                    id="input"
+                    class="form-control"
+                    value=""
+                    required="required"
+                    title=""
+                  />
+
+                  <img
+                    src="{% static 'hr/images/salaryicon.png' %}"
+                    alt="salaryicon"
+                    style="height: 25px; width: 50px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Salary: *</label>
+                  <input type="text" name="expectations" placeholder="salary" />
+
+                  <img
+                    src="{% static 'hr/images/expectationicon.png' %}"
+                    alt="salaryicon"
+                    style="height: 25px; width: 40px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Expectations: *</label>
+                  <input
+                    type="text"
+                    name="expectations"
+                    placeholder="Salary Expectations"
+                  />
+
+                  <img
+                    src="{% static 'hr/images/jobdsprictionicon.png' %}"
+                    alt="jobdsprictionicon"
+                    style="height: 25px; width: 40px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Job Description: *</label>
+                  <input
+                    type="text"
+                    name="job_description"
+                    placeholder="Job Description"
+                  />
+
+                  <img
+                    src="{% static 'hr/images/experianceicon.png' %}"
+                    alt="jobdsprictionicon"
+                    style="height: 25px; width: 40px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Experience: *</label>
+                  <input
+                    type="text"
+                    name="Experience"
+                    placeholder="Job Experience"
+                  />
+
+                  <img
+                    src="{% static 'hr/images/archivmenticon.png' %}"
+                    alt="archivmenticon"
+                    style="height: 25px; width: 40px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Achivement: *</label>
+                  <input
+                    type="text"
+                    name="achivement"
+                    placeholder="Major Achivement"
+                  />
+
+                  <img
+                    src="{% static 'hr/images/projecticon.png' %}"
+                    alt="projecticon"
+                    style="height: 25px; width: 40px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Project Handled: *</label>
+                  <input
+                    type="text"
+                    name="project_handled"
+                    placeholder="Number of project handled"
+                  />
+                </div>
+                <input
+                  type="button"
+                  name="next"
+                  class="next action-button"
+                  value="Next"
+                />
+                <input
+                  type="button"
+                  name="previous"
+                  class="previous action-button-previous"
+                  value="Previous"
+                />
+              </fieldset>
+              <fieldset>
+                <div class="form-card">
+                  <div class="row">
+                    <div class="col-7">
+                      <h2 class="fs-title">Uploads:</h2>
+                    </div>
+                    <div class="col-5">
+                      <h2 class="steps">Step 3 - 4</h2>
+                    </div>
+                  </div>
+                  <img
+                    src="{% static 'hr/images/resumeuploadicon.png' %}"
+                    alt="resumeuploadicon"
+                    style="height: 25px; width: 50px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Resume:</label>
+                  <input type="file" name="resume" />
+
+                  <img
+                    src="{% static 'hr/images/imageuploadicon.png' %}"
+                    alt="resumeuploadicon"
+                    style="height: 25px; width: 40px; padding-left: 10px"
+                  />
+                  <label class="fieldlabels">Image Upload:</label>
+                  <input type="file" name="image" accept="image/*" />
+                </div>
+                <input
+                  type="button"
+                  name="next"
+                  class="next action-button"
+                  value="Submit"
+                />
+                <input
+                  type="button"
+                  name="previous"
+                  class="previous action-button-previous"
+                  value="Previous"
+                />
+              </fieldset>
+              <fieldset>
+                <div class="form-card">
+                  <div class="row">
+                    <div class="col-7">
+                      <h2 class="fs-title">Finish:</h2>
+                    </div>
+                    <div class="col-5">
+                      <h2 class="steps">Step 4 - 4</h2>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <h2 class="purple-text text-center">
+                    <strong>SUCCESS !</strong>
+                  </h2>
+                  <br />
+                  <div class="row justify-content-center">
+                    <div class="col-3">
+                      <img
+                        src="{% static 'hr/images/tick.png'%}"
+                        class="fit-image"
+                      />
+                    </div>
+                  </div>
+                  <br /><br />
+                  <div class="row justify-content-center">
+                    <div class="col-7 text-center">
+                      <h5 class="purple-text text-center">
+                        You Have Successfully Signed Up
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div align="center">
+      <!-- <input type="text" class="form-control" value="John Doe"> -->
+      <a href="/hr/"
+        ><button class="btn btn-outline-danger">
+          <span
+            ><img
+              style="height: 20px; width: 20px"
+              src="{% static 'hr/images/goback.png'%}"
+          /></span>
+          &nbsp;Back
+        </button>
+      </a>
+      <!-- <button class="btn btn-outline-primary"></button>  -->
+    </div>
+    <br />
+    <footer
+      class="text-center text-white"
+      style="background-color: gray; margin-left: 5%; margin-right: 5%"
+    >
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © {{year}} Copyright:
+        <a class="text-white" href="http://www.dudhatindustries.com/"
+          >dudhatindustries.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+  <script src="{% static 'hr/js/addnewprofile.js' %}"></script>
+</html>

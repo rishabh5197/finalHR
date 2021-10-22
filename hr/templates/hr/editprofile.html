@@ -1,0 +1,388 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link
+      rel="icon"
+      href="{% static 'hr/images/logo.jpg' %}"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="{% static 'hr/css/editprofile.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- header closed here , body part to be worked out from here...... -->
+    <div align="center" style="margin-bottom: 5%">
+      <div class="input-group mb-3" style="width: 50%; height: 30px">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Employee Id"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-outline-success" type="button">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- edit profile starts here -->
+    <div class="container">
+      <div class="row gutters">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="account-settings">
+                <div class="user-profile">
+                  <div class="user-avatar">
+                    <img
+                      src="{% static 'hr/images/female.png'%}"
+                      alt="Maxwell Admin"
+                    />
+                  </div>
+                  <h5 class="user-name">ABC XYZ</h5>
+                  <h5 class="user-name">{{name}}</h5>
+                  <h6 class="user-email">abc@gmail.com</h6>
+                  <h6 class="user-email">{{email}}</h6>
+                </div>
+                <div class="about">
+                  <h5>Job Description</h5>
+                  <p>
+                    I'm abc. Full Stack Designer I enjoy creating user-centric,
+                    delightful and human experiences.
+                  </p>
+                  <p>{{job_description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h6 class="mb-2 text-primary">Personal Details</h6>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fullName"
+                      placeholder="Full name of person "
+                      name="name"
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="eMail">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="eMail"
+                      placeholder="Email Address of Person "
+                      name="email"
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <br />
+                    <label for="phone">Primary Contact Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="phone"
+                      placeholder="Primary Phone number"
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <br />
+                    <label for="alternatephonenumber"
+                      >Alternate Contact Number</label
+                    >
+                    <input
+                      type="url"
+                      class="form-control"
+                      id="alternatephonenumber"
+                      placeholder="Alternate Contact Number"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row gutters">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <br />
+                    <label for="birthdate">Birthdate</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="birthdate"
+                      placeholder="Birthdate of person"
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <br />
+                    <label for="education">Highest Education</label>
+                    <input
+                      type="url"
+                      class="form-control"
+                      id="education"
+                      placeholder="Qualification of person"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row gutters">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <br />
+                    <label for="address">Address</label>
+                    <textarea
+                      name=""
+                      cols="10"
+                      rows="7"
+                      type="date"
+                      class="form-control"
+                      id="address"
+                      placeholder="Address of person"
+                    >
+                    </textarea>
+                  </div>
+                </div>
+
+                <div class="row gutters">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h6 class="mt-3 mb-2 text-primary"><br />Job profile</h6>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <label for="job_title">Job Title</label>
+                      <input
+                        type="name"
+                        class="form-control"
+                        id="job_title"
+                        placeholder="Enter Street"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <label for="dateofjoining">Date of Joining</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="dateofjoining"
+                        placeholder="Date of joining"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <br />
+                      <label for="Salary">Salary</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="Salary"
+                        placeholder="Enter Updated Salary"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <br />
+                      <label for="job_expectations">Job Expectations</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="job_expectations"
+                        placeholder="Update Job Expectations"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <br />
+                      <label for="job_description">Job Description</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="job_description"
+                        placeholder="Enter Updated Job Description"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <br />
+                      <label for="experiences">Experiences</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="experiences"
+                        placeholder="Update Job Experiences"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <br />
+                      <label for="Achievements">Achievements</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="Achievements"
+                        placeholder="Major Achievement"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <br />
+                      <label for="experiences">Project Handled</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="experiences"
+                        placeholder="Major Project Handled"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row gutters">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                      <h6 class="mt-3 mb-2 text-primary"><br />Files Upload</h6>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      <div class="form-group">
+                        <label for="updateimage">Update Image</label>
+                        <input
+                          type="file"
+                          class="form-control"
+                          id="updateimage"
+                          placeholder="Update image"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      <div class="form-group">
+                        <label for="resume">Updated Resume Upload</label>
+                        <input
+                          type="file"
+                          class="form-control"
+                          id="resume"
+                          placeholder="Update Resume"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Buttons -->
+
+                  <div
+                    class="row gutters"
+                    align="center"
+                    style="padding-top: 5%"
+                  >
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                      <div class="text-right">
+                        <button
+                          type="button"
+                          id="submit"
+                          name="submit"
+                          class="btn btn-danger"
+                        >
+                          <span
+                            ><img
+                              style="
+                                height: 20px;
+                                width: 25px;
+                                padding-right: 5px;
+                              "
+                              src="{% static 'hr/images/crosswhite.png' %}"
+                          /></span>
+                          Cancel</button
+                        >&nbsp;
+                        <button
+                          type="button"
+                          id="submit"
+                          name="submit"
+                          class="btn btn-success"
+                        >
+                          <span
+                            ><img
+                              style="
+                                height: 20px;
+                                width: 25px;
+                                padding-right: 5px;
+                              "
+                              src="{% static 'hr/images/tickwhite.png' %}"
+                          /></span>
+                          Update
+                        </button>
+                        &nbsp;
+                        <a href="/hr"
+                          ><button class="btn btn-info" style="color: white">
+                            <span
+                              ><img
+                                style="height: 20px; width: 20px"
+                                src="{% static 'hr/images/goback.png'%}"
+                            /></span>
+                            Back
+                          </button></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+      </div>
+    </div>
+    <footer
+      class="text-center text-white"
+      style="
+        width: 82%;
+        background-color: gray;
+        margin-left: 9%;
+        margin-right: 10%;
+        margin-top: 5%;
+      "
+    >
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © {{year}} Copyright:
+        <a class="text-white" href="http://www.dudhatindustries.com/"
+          >dudhatindustries.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+</html>

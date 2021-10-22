@@ -1,0 +1,323 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- website logo -->
+    <link
+      rel="icon"
+      href="{% static 'hr/images/logo.jpg' %}"
+      type="image/x-icon"
+    />
+    <title>Dudhat Industries</title>
+    <link rel="stylesheet" href="{% static 'hr/css/ask_actions.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navigation bar declaration -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #73a9c2"
+    >
+      <!--  logo -->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/hr/">
+          <img id="logo" src="{% static 'hr/images/logo.jpg' %}" />
+          <!-- Image added along with css -->
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Welcome {{name}}</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex" method="get" action="hr/results">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="/hr/hr/gotoadduser" id="link">
+            <!-- Link to be added -->
+            <div
+              id="actions"
+              style="background-color: royalblue; border-radius: 25px"
+            >
+              <div>
+                <img
+                  src="{%static 'hr/images/addprofile.png' %}"
+                  style="height: 175px; padding: 0px"
+                />
+              </div>
+              <div>
+                <p style="color: white; font-size: 30px; font-weight: bold">
+                  Add User
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- </div> -->
+
+        <div class="col">
+          <a href="/hr/hr/viewprofile" id="link">
+            <div
+              id="actions"
+              style="background-color: green; border-radius: 25px"
+            >
+              <div>
+                <img
+                  src="{%static 'hr/images/searchprofile.png' %}"
+                  style="height: 175px; padding: 0px"
+                />
+              </div>
+              <p style="color: white; font-size: 30px; font-weight: bold">
+                View Profile
+              </p>
+
+              <!-- Link to be added -->
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="/hr/hr/editprofile" id="link">
+            <div
+              id="actions"
+              style="background-color: gray; border-radius: 25px"
+            >
+              <div>
+                <img
+                  src="{%static 'hr/images/editprofile.png' %}"
+                  style="height: 175px; padding: 0px"
+                />
+              </div>
+              <p style="color: white; font-size: 30px; font-weight: bold">
+                Edit Profile
+              </p>
+
+              <!-- Link to be added -->
+            </div>
+          </a>
+        </div>
+        <!-- <div class="w-100"></div> -->
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="/hr/hr/deleteprofile" id="link">
+            <!-- Link to be added -->
+            <div
+              id="actions"
+              style="background-color: red; border-radius: 25px"
+            >
+              <div>
+                <img
+                  src="{%static 'hr/images/deleteprofile.png' %}"
+                  style="height: 175px; padding: 0px"
+                />
+              </div>
+              <p style="color: white; font-size: 30px; font-weight: bold">
+                Delete Profile
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="/hr/hr/attendancereport" id="link">
+            <div
+              id="actions"
+              style="background-color: purple; border-radius: 25px"
+            >
+              <div>
+                <img
+                  src="{%static 'hr/images/attendance.png' %}"
+                  style="height: 175px; padding: 0px"
+                />
+              </div>
+              <p style="color: white; font-size: 30px; font-weight: bold">
+                Attendance Report
+              </p>
+
+              <!-- Link to be added -->
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="/hr/hr/salary" id="link">
+            <!-- Link to be added -->
+            <div
+              id="actions"
+              style="background-color: yellowgreen; border-radius: 25px"
+            >
+              <div>
+                <img
+                  src="{%static 'hr/images/salary.png' %}"
+                  style="height: 175px; padding: 0px"
+                />
+              </div>
+              <p style="color: white; font-size: 30px; font-weight: bold">
+                Salary
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="/hr/hr/editconfiguration" id="link">
+            <!-- Link to be added -->
+            <div
+              id="actions"
+              style="background-color: rgb(0, 225, 255); border-radius: 25px"
+            >
+              <div>
+                <img
+                  src="{%static 'hr/images/config.png' %}"
+                  style="height: 175px; padding: 0px"
+                />
+              </div>
+              <div>
+                <p
+                  style="
+                    color: rgb(255, 255, 255);
+                    font-size: 30px;
+                    font-weight: bold;
+                  "
+                >
+                  Edit Configuration
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="" id="link">
+            <!-- Link to be added -->
+            <!-- <div
+                    id="actions"
+                    style="
+                      background-color: rgb(0, 225, 255);
+                      border-radius: 25px;
+                    "
+                  >
+                    <div>
+                      <img
+                        src="{%static 'hr/images/config.png' %}"
+                        style="height: 175px; padding: 0px"
+                      />
+                    </div>
+                    <div>
+                      <p
+                        style="
+                          color: rgb(255, 255, 255);
+                          font-size: 30px;
+                          font-weight: bold;
+                        "
+                      >
+                        Edit Configuration
+                      </p>
+                    </div>
+                  </div> -->
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="" id="link">
+            <!-- Link to be added -->
+            <!-- <div
+                    id="actions"
+                    style="
+                      background-color: rgb(0, 225, 255);
+                      border-radius: 25px;
+                    "
+                  >
+                    <div>
+                      <img
+                        src="{%static 'hr/images/config.png' %}"
+                        style="height: 175px; padding: 0px"
+                      />
+                    </div>
+                    <div>
+                      <p
+                        style="
+                          color: rgb(255, 255, 255);
+                          font-size: 30px;
+                          font-weight: bold;
+                        "
+                      >
+                        Edit Configuration
+                      </p>
+                    </div>
+                  </div> -->
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!-- </div>
+    </div>
+    </div> -->
+    <!-- ------------------------------------------- footer ---------------------------  -->
+    <footer
+      class="text-center text-white"
+      style="
+        width: 82%;
+        background-color: gray;
+        margin-left: 9%;
+        margin-right: 10%;
+        margin-top: 5%;
+      "
+    >
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © {{year}} Copyright:
+        <a class="text-white" href="http://www.dudhatindustries.com/"
+          >dudhatindustries.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+</html>
